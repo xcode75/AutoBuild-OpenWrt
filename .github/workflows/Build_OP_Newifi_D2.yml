@@ -79,6 +79,11 @@ jobs:
         ./scripts/feeds install -a
         ./scripts/feeds install -a
     
+    - name: Import external feeds - xclient
+      working-directory: ./openwrt
+      run: |
+         echo 'src-git xclient https://github.com/xcode75/openwrt-xclient' >>feeds.conf.default
+         
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
     #  run: |
