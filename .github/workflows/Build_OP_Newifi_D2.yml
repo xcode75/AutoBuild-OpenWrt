@@ -70,17 +70,18 @@ jobs:
         rm -rf luci-theme-argon  
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         
+    - name: Import external feeds - xclient
+      working-directory: ./openwrt
+      run: |
+         echo 'src-git xclient https://github.com/xcode75/openwrt-xclient' >>feeds.conf.default
+         
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-    
-    - name: Import external feeds - xclient
-      working-directory: ./openwrt
-      run: |
-         echo 'src-git xclient https://github.com/xcode75/openwrt-xclient' >>feeds.conf.default
+
          
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
