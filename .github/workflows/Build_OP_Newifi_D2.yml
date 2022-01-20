@@ -90,7 +90,7 @@ jobs:
     
     - name: Configuration Customization - Build_Newifi_D2
       env:
-        CONFIG_FILE: 'confid_D2'
+        CONFIG_FILE: 'configD2'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
