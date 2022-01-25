@@ -64,11 +64,8 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git clone https://github.com/xcode75/tcping package/tcping
-        git clone https://github.com/xcode75/xray-core-op package/xray-core
         cd package/lean  
         rm -rf luci-theme-argon  
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
         
     - name: Import external feeds - xclient
       working-directory: ./openwrt
